@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 import numpy as np
 import time
+import simsopt
 from scipy.optimize import minimize
 from simsopt._core.optimizable import load
 from simsopt.geo import ArclengthVariation
@@ -19,6 +20,35 @@ import git
 from simsopt.geo import CurveCWSFourier
 from simsopt.geo import EnclosedXYArea, CurveCurveXYdistance, CurveXYConvexity, ToroidalAngleConstraint, UpwardFacingPort
 
+import argparse
+import importlib
+import datetime
+
+# Read command line arguments
+parser = argparse.ArgumentParser()
+
+# If ran with "--pickle", expect the input to be a pickle.
+parser.add_argument("--pickle", dest="pickle", default=False, action="store_true")
+
+# Provide input as a relative or absolute path
+parser.add_argument("--input", dest="input", default=None)
+
+# Prepare args
+args = parser.parse_args()
+
+# Read input dict
+if args.pickle:
+    with open(args.input, 'rb') as f:
+        inputs = pickle.load(f)
+else:
+    fname = args.input.replace('/','.')
+    if fname[-3:]=='.py':
+        fname = fname[:-3]
+    std = importlib.import_module(fname, package=None)
+    inputs = std.inputs
+
+
+date = datetime.datetime
 
 # Number of unique coil shapes, i.e. the number of coils per half field period:
 # (Since the configuration has nfp = 2, multiply by 4 to get the total number of coils.)
@@ -79,7 +109,7 @@ ntheta = inputs['ntheta']
 # Read port related input
 port_order = inputs['port_order']
 qpts = inputs['port_quadpoints']
-phi0 = inputs['port_phi0']
+iphi0 = inputs['port_iphi0']
 
 # create log
 
@@ -121,9 +151,9 @@ bs = BiotSavart(coils)
 bs.set_points(s.gamma().reshape((-1, 3)))
 
 curves = [c.curve for c in coils]
-curves_to_vtk(curves, OUT_DIR + "curves_initial")
+curves_to_vtk(curves, os.path.join(OUT_DIR, "curves_initial"))
 pointData = {"B_N": np.sum(bs.B().reshape((nphi, ntheta, 3)) * s.unitnormal(), axis=2)[:, :, None]}
-s.to_vtk(OUT_DIR + "surf_initial", extra_data=pointData)
+s.to_vtk(os.path.join(OUT_DIR, "surf_initial"), extra_data=pointData)
 
 
 
@@ -136,13 +166,15 @@ curve_cws = CurveCWSFourier(
     order,
     s
 )
-curve_cws.set('phic(0)', phi0)
-curve_cws.set('phic(1)', 1./128)
-curve_cws.set('thetac(0)', 0.3)
-curve_cws.set('thetas(1)', 0.15)
+nfp = s.nfp
+dphi = 1/(2*nfp) * 1/ncoils
+curve_cws.set('phic(0)', iphi0*dphi)
+curve_cws.set('phic(1)', dphi/3.0)
+curve_cws.set('thetac(0)', 0.25)
+curve_cws.set('thetas(1)', 0.1)
 
-curves_to_vtk([curve_cws], OUT_DIR + "port_initial")
-curve_cws.save(OUT_DIR + "port_initial.json")
+curves_to_vtk([curve_cws], os.path.join(OUT_DIR, "port_initial"))
+curve_cws.save(os.path.join(OUT_DIR, "port_initial.json"))
 
 # ----------------------------------------------------------------------------------------------------
 #                                    DEFINE OBJECTIVE FUNCTION
@@ -233,9 +265,9 @@ logprint(f'FINAL FUNCTION VALUE IS {J:.5E}')
 # ----------------------------------------------------------------------------------------------------
 #                                    PREPARING OUTPUT
 # ====================================================================================================
-curves_to_vtk(curves, OUT_DIR + f"curves_final")
-curves_to_vtk([curve_cws], OUT_DIR + "port_final")
+curves_to_vtk(curves,  os.path.join(OUT_DIR, f"curves_final"))
+curves_to_vtk([curve_cws], os.path.join(OUT_DIR, "port_final"))
 pointData = {"B_N": np.sum(bs.B().reshape((nphi, ntheta, 3)) * s.unitnormal(), axis=2)[:, :, None]}
-s.to_vtk(OUT_DIR + "surf_final", extra_data=pointData)
-curve_cws.save(OUT_DIR + "port_final.json")
-bs.save(OUT_DIR + f'biotsavart_final.json');
+s.to_vtk(os.path.join(OUT_DIR, "surf_final"), extra_data=pointData)
+curve_cws.save(os.path.join(OUT_DIR, "port_final.json"))
+bs.save(os.path.join(OUT_DIR, f'biotsavart_final.json'))
