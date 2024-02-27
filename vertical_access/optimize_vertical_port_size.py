@@ -129,6 +129,9 @@ def logprint(s):
     with open(os.path.join(OUT_DIR, 'log.txt'), 'a') as f:
         f.write(s)
 
+with open(os.path.join(OUT_DIR, 'inputs.pckl'), 'wb') as f:
+    pickle.dump(inputs, f)
+
 # ----------------------------------------------------------------------------------------------------
 #                                       GENERATE COILS
 # ====================================================================================================
@@ -154,7 +157,7 @@ curves = [c.curve for c in coils]
 curves_to_vtk(curves, os.path.join(OUT_DIR, "curves_initial"))
 pointData = {"B_N": np.sum(bs.B().reshape((nphi, ntheta, 3)) * s.unitnormal(), axis=2)[:, :, None]}
 s.to_vtk(os.path.join(OUT_DIR, "surf_initial"), extra_data=pointData)
-
+bs.save(os.path.join(OUT_DIR, "biotsavart_initial.json"))
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -190,7 +193,7 @@ linkNum = LinkingNumber(base_tf_curves)
 
 # Port relavant penalties
 Jxyarea = EnclosedXYArea( curve_cws )
-Jccxydist = CurveCurveXYdistance( curves, curve_cws, 0.05 )
+Jccxydist = CurveCurveXYdistance( curves, curve_cws, 0.02 )
 Jconvex = CurveXYConvexity( curve_cws )
 Jarc = ArclengthVariation( curve_cws )
 Jufp = UpwardFacingPort(curve_cws)
