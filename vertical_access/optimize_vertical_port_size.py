@@ -18,7 +18,7 @@ from simsopt.geo.curveobjectives import CurveLength, CurveCurveDistance, \
 import matplotlib.pyplot as plt
 import git
 from simsopt.geo import CurveCWSFourier
-from simsopt.geo import EnclosedXYArea, CurveCurveXYdistance, CurveXYConvexity, ToroidalAngleConstraint, UpwardFacingPort
+from simsopt.geo import ProjectedEnclosedArea, ProjectedCurveCurveDistance, ProjectedCurveConvexity, DirectedFacingPort
 
 import argparse
 import importlib
@@ -192,11 +192,11 @@ Jmscs = [MeanSquaredCurvature(c) for c in base_curves]
 linkNum = LinkingNumber(base_tf_curves)
 
 # Port relavant penalties
-Jxyarea = EnclosedXYArea( curve_cws )
-Jccxydist = CurveCurveXYdistance( curves, curve_cws, 0.02 )
-Jconvex = CurveXYConvexity( curve_cws )
+Jxyarea = ProjectedEnclosedArea( curve_cws )
+Jccxydist = ProjectedCurveCurveDistance( curves, curve_cws, 0.02 )
+Jconvex = ProjectedCurveConvexity( curve_cws )
 Jarc = ArclengthVariation( curve_cws )
-Jufp = UpwardFacingPort(curve_cws)
+Jufp = DirectedFacingPort(curve_cws)
 Jport = -1 * Jxyarea + wdd * Jccxydist + warc * Jarc + wufp * Jufp #+ wco * Jconvex
 
 
