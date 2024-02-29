@@ -23,6 +23,7 @@ from simsopt.geo import EnclosedXYArea, CurveCurveXYdistance, CurveXYConvexity, 
 import argparse
 import importlib
 import datetime
+import pickle 
 
 # Read command line arguments
 parser = argparse.ArgumentParser()
