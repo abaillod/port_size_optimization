@@ -4,6 +4,8 @@ import os
 import numpy as np
 from simsopt.geo import SurfaceRZFourier
 from simsopt._core import load
+from simsopt.field import SurfaceClassifier, \
+    particles_to_vtk, compute_fieldlines, LevelsetStoppingCriterion, plot_poincare_data
 import pickle
 
 # Read command line arguments
@@ -113,4 +115,33 @@ ax.set_ylabel(r'$\phi$')
 ax.set_xlabel(r'$\theta$')
 plt.savefig(os.path.join(figure_path, 'normal_field_error_final.png'))
 
+# =====================================================================
+# POINCARE
+
+# Run and plot Poincare section
+bs = bs_final
+surf = SurfaceRZFourier.from_vmec_input('input.LandremanPaul2021_QH', range="half period", nphi=nphi, ntheta=ntheta)
+surf1 = SurfaceRZFourier.from_vmec_input('input.LandremanPaul2021_QH', range="half period", nphi=nphi, ntheta=ntheta)
+surf1.extend_via_normal(0.1)
+nfp = surf.nfp
+
+Rmaj = surf.major_radius()
+r0 = surf.minor_radius()
+sc_fieldline = SurfaceClassifier(surf1, h=0.01, p=3)
+nfieldlines = 50
+tmax_fl = 2500
+degree = 4
+
+def trace_fieldlines(bfield,label):
+    # Set up initial conditions - 
+    R0 = np.linspace(Rmaj-2*r0, Rmaj+2*r0, nfieldlines)
+    Z0 = np.zeros(nfieldlines)
+    phis = [(i/4)*(2*np.pi/nfp) for i in range(4)]
+    fieldlines_tys, fieldlines_phi_hits = compute_fieldlines(
+        bfield, R0, Z0, tmax=tmax_fl, tol=1e-8,
+        phis=phis, stopping_criteria=[LevelsetStoppingCriterion(sc_fieldline.dist)])
+    plot_poincare_data(fieldlines_phi_hits, phis, os.path.join(figure_path, 'poincare_final'), dpi=150,surf=surf,mark_lost=True)
+    return fieldlines_phi_hits
+
+hits = trace_fieldlines(bs_final, 'vmec')
 

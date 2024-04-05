@@ -39,7 +39,7 @@ from simsopt.geo.curveobjectives import CurveLength, CurveCurveDistance, \
 # Number of unique coil shapes, i.e. the number of coils per half field period:
 # (Since the configuration has nfp = 2, multiply by 4 to get the total number of coils.)
 ncoils = 2
-nwp = 3
+nwp = 1
 
 # Major radius for the initial circular coils:
 R0 = 1.0
@@ -49,6 +49,8 @@ R1 = 0.5
 
 # Number of Fourier modes describing each Cartesian component of each coil:
 order = 7
+
+WP_WEIGHT_SCALE = 1
 
 # Weight on the curve lengths in the objective function. We use the `Weight`
 # class here to later easily adjust the scalar value and rerun the optimization
@@ -224,8 +226,9 @@ res = minimize(fun, dofs, jac=True, method='L-BFGS-B', options={'maxiter': MAXIT
 
 ### Adding windowpanes
 if nwp>0:
-    base_wp_curves = create_equally_spaced_windowpane_curves( nwp, s.nfp, R0+R1*2, R1, -2*R1, 4, numquadpoints=None ) + create_equally_spaced_windowpane_curves( nwp, s.nfp, R0+R1*2, R1, 2*R1, 4, numquadpoints=None )
-    base_wp_currents = [Current(1E4) for i in range(2*nwp)]
+    order = 5
+    base_wp_curves = create_equally_spaced_windowpane_curves( nwp, s.nfp, R0+R1, R1, R1, order, numquadpoints=None ) + create_equally_spaced_windowpane_curves( nwp, s.nfp, R0+R1, R1, -R1, order, numquadpoints=None )
+    base_wp_currents = [ScaledCurrent(Current(0), 1E5) for i in range(len(base_wp_curves))]
 else:
     base_wp_curves = []
     base_wp_currents = []
@@ -235,10 +238,15 @@ base_currents = base_tf_currents + base_wp_currents
 
 coils = coils_via_symmetries(base_curves, base_currents, s.nfp, True)
 
-for c in coils:
+for c in base_tf_curves:
+    c.fix_all()
+for c in base_tf_currents:
     c.fix_all()
 for c in base_wp_curves:
     c.unfix_all()
+    c.fix('yaw')
+    c.fix('pitch')
+    c.fix('roll')
 for c in base_wp_currents:
     c.unfix_all()
 
@@ -252,7 +260,7 @@ pointData = {"B_N": np.sum(bs.B().reshape((nphi, ntheta, 3)) * s.unitnormal(), a
 s.to_vtk(OUT_DIR + "surf_init", extra_data=pointData)
 
 # Define the individual terms objective function:
-Jf = SquaredFlux(s, bs)
+Jf = SquaredFlux(s, bs, definition='local')
 Jls = [CurveLength(c) for c in base_curves]
 Jccdist = CurveCurveDistance(curves, CC_THRESHOLD, num_basecurves=ncoils)
 Jcsdist = CurveSurfaceDistance(curves, s, CS_THRESHOLD)
@@ -264,13 +272,18 @@ linkNum = LinkingNumber(base_curves)
 # Form the total objective function. To do this, we can exploit the
 # fact that Optimizable objects with J() and dJ() functions can be
 # multiplied by scalars and added:
-JF = Jf \
-    + LENGTH_WEIGHT * QuadraticPenalty(sum(Jls), 1e2) \
-    + CC_WEIGHT * Jccdist \
-    + CS_WEIGHT * Jcsdist \
+JF = 1e2*Jf + WP_WEIGHT_SCALE * (
+      LENGTH_WEIGHT * QuadraticPenalty(sum(Jls), 1e1) \
+    + 10*CC_WEIGHT * Jccdist \
     + CURVATURE_WEIGHT * sum(Jcs) \
     + MSC_WEIGHT * sum(QuadraticPenalty(J, MSC_THRESHOLD) for J in Jmscs) \
     + linkNum
+)
+
+print('===========================================================')
+print('DOFS ARE:\n')
+print(JF.dof_names)
+print('===========================================================')
 
 def fun(dofs):
     JF.x = dofs
