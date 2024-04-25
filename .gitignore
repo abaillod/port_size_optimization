@@ -21,6 +21,8 @@ horizontal_access/archives
 horizontal_access/**/output
 **/Untitled.ipynb
 
+archive
+vertical_access/output
 
 configurations/qa_landreman_paul/wechsung/minimizers
 configurations/qh_landreman_paul/wiedman_coils/figures
