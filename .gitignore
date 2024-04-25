@@ -22,8 +22,11 @@ horizontal_access/**/output
 **/Untitled.ipynb
 
 archive
-vertical_access/output
+vertical_access/archives
+vertical_access/**/output
 
 configurations/qa_landreman_paul/wechsung/minimizers
 configurations/qh_landreman_paul/wiedman_coils/figures
 configurations/qh_landreman_paul/wiedman_coils/output*
+
+presentation/*.pptx
