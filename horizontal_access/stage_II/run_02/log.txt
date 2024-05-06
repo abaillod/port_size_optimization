@@ -1,0 +1,195 @@
+HORIZONTAL PORT SIZE OPTIMIZATION WITH WINDOWPANE
+Using simsopt version ff695962209dd5e686fe6a1275bf163645a89cb6
+Using port size optimization git version 63efd295a9624d6b887e17fc92ba922c885eb24b
+Date = 2024-05-02 at 20h59
+Generating WP coils...
+Generating BiotSavart object...
+Generating access port...
+Defining objective function...
+
+
+================================================================
+Evaluating initial objective...
+J = 5.2647E-02
+Starting iterations to find penalties weight...
+Weight iteration 1:: Running with wdd=1.00E+00, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=1.56E-07, MSC_WEIGHT=1.10E-08, LNUM_WEIGHT=1.00E-01
+length penalty=3.71E-07, ccdist=3.34E-10, csdist=2.66E-10, sumcs=1.87E-01, summscs=2.56E+02, jln=5.00E-03, cpdist=2.21E-05, arcpen=4.72E-03, ufp=2.26E-03
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 2:: Running with wdd=1.50E+00, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=1.56E-07, MSC_WEIGHT=1.65E-08, LNUM_WEIGHT=1.50E-01
+length penalty=2.01E-05, ccdist=0.00E+00, csdist=0.00E+00, sumcs=7.14E-02, summscs=1.99E+02, jln=5.00E-03, cpdist=1.99E-05, arcpen=4.71E-03, ufp=2.43E-03
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 3:: Running with wdd=2.25E+00, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=1.56E-07, MSC_WEIGHT=2.47E-08, LNUM_WEIGHT=2.25E-01
+length penalty=7.28E-05, ccdist=4.06E-09, csdist=2.06E-10, sumcs=1.44E+00, summscs=4.84E+02, jln=5.00E-03, cpdist=3.18E-05, arcpen=4.75E-03, ufp=2.04E-03
+coils max curvature exceeded
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 4:: Running with wdd=3.38E+00, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=3.71E-08, LNUM_WEIGHT=3.38E-01
+length penalty=1.75E-05, ccdist=1.30E-10, csdist=3.27E-13, sumcs=2.77E-01, summscs=1.48E+02, jln=5.00E-03, cpdist=1.46E-05, arcpen=4.72E-03, ufp=2.36E-03
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 5:: Running with wdd=5.06E+00, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.57E-08, LNUM_WEIGHT=5.06E-01
+length penalty=2.81E-07, ccdist=3.01E-11, csdist=0.00E+00, sumcs=3.63E-02, summscs=1.73E+02, jln=5.00E-03, cpdist=1.28E-05, arcpen=4.74E-03, ufp=2.25E-03
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 6:: Running with wdd=7.59E+00, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=8.35E-08, LNUM_WEIGHT=7.59E-01
+length penalty=1.08E-07, ccdist=0.00E+00, csdist=0.00E+00, sumcs=1.30E-01, summscs=1.82E+02, jln=5.00E-03, cpdist=2.24E-05, arcpen=4.70E-03, ufp=2.69E-03
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 7:: Running with wdd=1.14E+01, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=1.25E-07, LNUM_WEIGHT=1.14E+00
+length penalty=1.31E-05, ccdist=1.86E-08, csdist=1.98E-09, sumcs=3.61E-03, summscs=1.53E+02, jln=5.00E-03, cpdist=2.82E-05, arcpen=4.90E-03, ufp=1.47E-03
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 8:: Running with wdd=1.71E+01, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=1.88E-07, LNUM_WEIGHT=1.71E+00
+length penalty=1.24E-06, ccdist=1.23E-08, csdist=2.89E-10, sumcs=9.00E-03, summscs=1.88E+02, jln=5.00E-03, cpdist=1.90E-05, arcpen=5.42E-03, ufp=1.30E-04
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 9:: Running with wdd=2.56E+01, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=2.82E-07, LNUM_WEIGHT=2.56E+00
+length penalty=7.25E-06, ccdist=1.95E-08, csdist=2.81E-09, sumcs=2.94E-01, summscs=1.17E+02, jln=5.00E-03, cpdist=2.18E-05, arcpen=7.58E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 10:: Running with wdd=3.84E+01, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=4.23E-07, LNUM_WEIGHT=3.84E+00
+length penalty=9.48E-06, ccdist=1.01E-09, csdist=4.65E-09, sumcs=8.28E-01, summscs=1.93E+02, jln=5.00E-03, cpdist=1.74E-05, arcpen=7.88E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 11:: Running with wdd=5.77E+01, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=6.34E-07, LNUM_WEIGHT=5.77E+00
+length penalty=9.95E-01, ccdist=3.09E-05, csdist=1.24E-07, sumcs=5.93E-02, summscs=1.23E+02, jln=4.05E-01, cpdist=5.45E-04, arcpen=1.08E-02, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 12:: Running with wdd=8.65E+01, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=9.51E-07, LNUM_WEIGHT=8.65E+00
+length penalty=1.82E-04, ccdist=3.23E-10, csdist=1.13E-08, sumcs=1.17E-01, summscs=2.18E+01, jln=5.00E-03, cpdist=8.17E-06, arcpen=1.03E-02, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 13:: Running with wdd=1.30E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=1.43E-06, LNUM_WEIGHT=1.30E+01
+length penalty=1.79E-04, ccdist=3.65E-08, csdist=1.71E-08, sumcs=1.79E-01, summscs=1.39E+02, jln=5.00E-03, cpdist=1.12E-05, arcpen=8.83E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 14:: Running with wdd=1.95E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=2.14E-06, LNUM_WEIGHT=1.95E+01
+length penalty=4.58E-05, ccdist=2.65E-09, csdist=5.11E-08, sumcs=3.63E-02, summscs=4.48E+01, jln=5.00E-03, cpdist=9.55E-06, arcpen=6.79E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+cpdist too large
+
+Weight iteration 15:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=3.21E-06, LNUM_WEIGHT=2.92E+01
+length penalty=2.19E-05, ccdist=2.41E-09, csdist=1.85E-09, sumcs=9.77E-04, summscs=7.88E+00, jln=5.00E-03, cpdist=6.73E-09, arcpen=4.90E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+
+Weight iteration 16:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=4.82E-06, LNUM_WEIGHT=4.38E+01
+length penalty=2.31E-04, ccdist=0.00E+00, csdist=1.25E-09, sumcs=6.14E-01, summscs=1.25E+01, jln=5.00E-03, cpdist=4.85E-08, arcpen=7.20E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+
+Weight iteration 17:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=7.23E-06, LNUM_WEIGHT=6.57E+01
+length penalty=3.01E-03, ccdist=2.17E-08, csdist=3.75E-09, sumcs=2.59E-03, summscs=1.26E+01, jln=5.00E-03, cpdist=2.52E-08, arcpen=8.53E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+
+Weight iteration 18:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=1.08E-05, LNUM_WEIGHT=9.85E+01
+length penalty=1.29E-03, ccdist=6.03E-11, csdist=3.87E-09, sumcs=6.36E-04, summscs=5.89E+00, jln=5.00E-03, cpdist=2.96E-13, arcpen=5.18E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+
+Weight iteration 19:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=1.63E-05, LNUM_WEIGHT=1.48E+02
+length penalty=5.73E-04, ccdist=0.00E+00, csdist=0.00E+00, sumcs=2.04E-01, summscs=3.04E+00, jln=5.00E-03, cpdist=3.96E-08, arcpen=6.44E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+
+Weight iteration 20:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=2.44E-05, LNUM_WEIGHT=2.22E+02
+length penalty=9.69E-04, ccdist=3.30E-09, csdist=0.00E+00, sumcs=7.39E-02, summscs=1.91E+00, jln=5.00E-03, cpdist=8.37E-09, arcpen=6.97E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+
+Weight iteration 21:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=3.66E-05, LNUM_WEIGHT=3.33E+02
+length penalty=3.69E-05, ccdist=9.67E-09, csdist=4.42E-11, sumcs=0.00E+00, summscs=8.07E-01, jln=5.00E-03, cpdist=8.70E-09, arcpen=7.14E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 22:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=3.66E-05, LNUM_WEIGHT=4.99E+02
+length penalty=9.34E-04, ccdist=0.00E+00, csdist=0.00E+00, sumcs=1.59E-02, summscs=1.37E+00, jln=5.00E-03, cpdist=7.29E-08, arcpen=6.96E-03, ufp=0.00E+00
+coils mean curvature exceeded
+Coils are probably linked
+
+Weight iteration 23:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=7.48E+02
+length penalty=2.85E-04, ccdist=5.18E-08, csdist=0.00E+00, sumcs=4.36E-02, summscs=2.64E-01, jln=5.00E-03, cpdist=5.82E-09, arcpen=6.52E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 24:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=1.12E+03
+length penalty=5.97E-07, ccdist=8.28E-08, csdist=0.00E+00, sumcs=5.01E-04, summscs=2.24E-01, jln=5.00E-03, cpdist=2.44E-08, arcpen=6.60E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 25:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=1.68E+03
+length penalty=3.38E-04, ccdist=9.03E-08, csdist=0.00E+00, sumcs=6.73E-03, summscs=4.11E-01, jln=5.00E-03, cpdist=6.74E-09, arcpen=6.53E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 26:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=2.53E+03
+length penalty=3.38E-04, ccdist=9.03E-08, csdist=0.00E+00, sumcs=6.73E-03, summscs=4.11E-01, jln=5.00E-03, cpdist=6.74E-09, arcpen=6.53E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 27:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=3.79E+03
+length penalty=8.54E-04, ccdist=5.51E-08, csdist=0.00E+00, sumcs=0.00E+00, summscs=1.75E-01, jln=5.00E-03, cpdist=7.92E-09, arcpen=6.77E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 28:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=5.68E+03
+length penalty=8.54E-04, ccdist=5.51E-08, csdist=0.00E+00, sumcs=0.00E+00, summscs=1.75E-01, jln=5.00E-03, cpdist=7.92E-09, arcpen=6.77E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 29:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=8.52E+03
+length penalty=6.17E-05, ccdist=3.65E-09, csdist=0.00E+00, sumcs=1.74E-02, summscs=6.99E-01, jln=5.00E-03, cpdist=2.64E-08, arcpen=6.62E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 30:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=1.28E+04
+length penalty=1.76E-04, ccdist=2.36E-07, csdist=3.04E-10, sumcs=0.00E+00, summscs=2.30E-01, jln=5.00E-03, cpdist=1.89E-08, arcpen=6.45E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 31:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=1.92E+04
+length penalty=3.19E-04, ccdist=4.68E-08, csdist=1.79E-10, sumcs=0.00E+00, summscs=5.93E-01, jln=5.00E-03, cpdist=5.26E-08, arcpen=6.55E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 32:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=2.88E+04
+length penalty=1.11E-03, ccdist=7.49E-08, csdist=3.27E-10, sumcs=5.00E-03, summscs=2.83E-01, jln=5.00E-03, cpdist=8.22E-09, arcpen=6.36E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 33:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=4.31E+04
+length penalty=1.11E-03, ccdist=7.49E-08, csdist=3.27E-10, sumcs=5.00E-03, summscs=2.83E-01, jln=5.00E-03, cpdist=8.22E-09, arcpen=6.36E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 34:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=6.47E+04
+length penalty=1.02E-04, ccdist=1.44E-10, csdist=1.98E-09, sumcs=1.91E-01, summscs=3.69E-01, jln=5.00E-03, cpdist=1.30E-08, arcpen=6.52E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 35:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=9.71E+04
+length penalty=1.02E-04, ccdist=1.44E-10, csdist=1.98E-09, sumcs=1.91E-01, summscs=3.69E-01, jln=5.00E-03, cpdist=1.30E-08, arcpen=6.52E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 36:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=1.46E+05
+length penalty=1.05E-04, ccdist=1.64E-08, csdist=0.00E+00, sumcs=0.00E+00, summscs=1.72E-01, jln=5.00E-03, cpdist=4.61E-10, arcpen=6.52E-03, ufp=0.00E+00
+Coils are probably linked
+
+Weight iteration 37:: Running with wdd=2.92E+02, warc=1.00E-02, wufp=1.00E-02, Length weight=1.56E-02, CC_WEIGHT=1.56E+02, CS_WEIGHT=1.56E+03, CURVATURE_WEIGHT=2.35E-07, MSC_WEIGHT=5.49E-05, LNUM_WEIGHT=2.18E+05
